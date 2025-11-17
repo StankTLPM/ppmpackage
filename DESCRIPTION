@@ -1,0 +1,14 @@
+Package: ppmconstruction
+Title: Building Projection Matrices (literal and numeral), Pre and Post-Breeding 
+Version: 0.0.0.9000
+Authors@R: 
+    person("Thomas L. P.", "Martin", , "thomas.martin@univ-lyon1.fr", role = c("aut", "cre"))
+Description: This package create projection matrices, both post and pre-breeding, based on life cycle graphs based on experimental data as fecundity and survival rates. Matrices can be express with numerical data, giving the asymptotic growth rate of the system (dominant eigenvalue) and asymptotic class distribution (normalized dominant eigenvector), or as literal matrices keeping the names of coefficient to see the structure of post and pre-breeding situations. The file matrixconstruction.R contains 2 functions, one to compute the product of two matrices with literal coefficients and the other to produce projection matrices both pre and post-breeding and with literal or numerical values for the parameters. If the numerical option is chosen, the function return the asymptotic growth rate and the asymptotic distribution.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
