@@ -94,7 +94,7 @@ projection_matrix <- function(n, t, r, mode = "num", timing = "pre") {
   for (trans in t) {
     i <- as.integer(trans[1])
     j <- as.integer(trans[2])
-    T[j, i] <- trans[3]
+    T[i, j] <- trans[3]
   }
 
   # Filling R
@@ -102,15 +102,15 @@ projection_matrix <- function(n, t, r, mode = "num", timing = "pre") {
     i <- as.integer(repro[1])
     j <- as.integer(repro[2])
     if (mode == "num") {
-      R[j, i] <- R[j, i] + as.numeric(repro[3])
+      R[i, j] <- R[i, j] + as.numeric(repro[3])
     } else {
       # literal option : concatenation with "+" if value other than "0"
-      if (R[j, i] == "1") {
-        R[j, i] <- paste0("(", R[j, i], " + ", repro[3], ")")
-      } else if (R[j, i] == "0") {
-        R[j, i] <- repro[3]
+      if (R[i, j] == "1") {
+        R[i, j] <- paste0("(", R[i, j], " + ", repro[3], ")")
+      } else if (R[i, j] == "0") {
+        R[i, j] <- repro[3]
       } else {
-        R[j, i] <- paste0("(", R[j, i], " + ", repro[3], ")")
+        R[i, j] <- paste0("(", R[i, j], " + ", repro[3], ")")
       }
     }
   }
